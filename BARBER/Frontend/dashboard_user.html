@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>User Dashboard | TrimTokyo</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="min-h-screen bg-gradient-to-br from-blue-900 to-black text-white font-[Montserrat]">
+
+  <!-- Navbar -->
+  <nav class="w-full flex justify-between items-center px-10 py-5 bg-black/40 backdrop-blur-md border-b border-white/10">
+    <h1 class="text-2xl font-bold text-cyan-400">TrimTokyo</h1>
+    <div class="flex space-x-6">
+      <button onclick="logoutUser()" class="text-white hover:text-red-400 transition-colors">Logout</button>
+    </div>
+  </nav>
+
+  <!-- Main Section -->
+  <section class="p-10">
+    <h2 class="text-3xl font-semibold mb-8">Welcome, <span id="userName">User</span> 👋</h2>
+
+    <!-- Booking Form -->
+    <div class="bg-white/10 p-6 rounded-2xl backdrop-blur-md mb-10 max-w-2xl">
+      <h3 class="text-xl font-semibold mb-4">Book a Barber</h3>
+
+      <form id="bookingForm" onsubmit="createBooking(event)" class="flex flex-col space-y-4">
+        <input type="text" id="serviceType" placeholder="Service Type (e.g. Haircut, Beard Trim)" required
+          class="p-3 rounded-lg bg-transparent border border-white/30 text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-cyan-400">
+
+        <input type="number" id="amount" placeholder="Amount (₹)" required
+          class="p-3 rounded-lg bg-transparent border border-white/30 text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-cyan-400">
+
+        <select id="paymentMethod" required
+          class="p-3 rounded-lg bg-transparent border border-white/30 text-white focus:outline-none focus:ring-2 focus:ring-cyan-400">
+          <option value="">Select Payment Method</option>
+          <option value="Cash">Cash</option>
+          <option value="UPI">UPI</option>
+        </select>
+
+        <input type="text" id="location" placeholder="Your Location" required
+          class="p-3 rounded-lg bg-transparent border border-white/30 text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-cyan-400">
+
+        <button type="submit" class="py-3 rounded-full bg-gradient-to-r from-cyan-600 to-blue-500 font-semibold hover:scale-105 transition-transform">
+          Book Now
+        </button>
+      </form>
+    </div>
+
+    <!-- Booking History -->
+    <div class="bg-white/10 p-6 rounded-2xl backdrop-blur-md">
+      <h3 class="text-xl font-semibold mb-4">Your Bookings</h3>
+      <table class="min-w-full border border-white/10 text-white text-left">
+        <thead>
+          <tr class="border-b border-white/20">
+            <th class="p-3">Service</th>
+            <th class="p-3">Amount</th>
+            <th class="p-3">Status</th>
+            <th class="p-3">Barber</th>
+          </tr>
+        </thead>
+        <tbody id="bookingTable"></tbody>
+      </table>
+    </div>
+  </section>
+
+  <script src="js/userDashboard.js"></script>
+</body>
+</html>
