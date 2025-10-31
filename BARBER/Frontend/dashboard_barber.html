@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Barber Dashboard | TrimTokyo</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gradient-to-br from-blue-900 to-black min-h-screen text-white font-[Montserrat]">
+
+  <nav class="flex justify-between items-center p-6">
+    <h1 class="text-2xl font-bold">TrimTokyo Barber</h1>
+    <button id="logoutBtn" class="bg-red-600 px-4 py-2 rounded-lg font-semibold hover:bg-red-700">Logout</button>
+  </nav>
+
+  <section class="p-10">
+    <h2 class="text-3xl font-semibold mb-6">Your Bookings ✂️</h2>
+    <div id="barberBookings" class="grid md:grid-cols-2 lg:grid-cols-3 gap-6"></div>
+  </section>
+
+  <script src="js/barberDashboard.js"></script>
+</body>
+</html>

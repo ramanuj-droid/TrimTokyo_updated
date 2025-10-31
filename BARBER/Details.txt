@@ -1,0 +1,87 @@
+TrimTokyo/
+│
+├── backend/
+├── controllers/
+│   ├── authController.js
+│   └── bookingController.js
+│   ├── adminController.js
+│   └── BarberController.js
+│   ├── server.js
+│   ├── config/
+│   │   └── db.js
+|   |   └── seed.js
+│   ├── models/
+│   │   ├── User.js
+│   │   ├── Barber.js
+│   │   └── Booking.js
+|   |   └── Admin.js
+│   ├── routes/
+│   │   ├── authRoutes.js
+│   │   ├── userRoutes.js
+│   │   ├── barberRoutes.js
+│   │   ├── adminRoutes.js
+│   │   └── bookingRoutes.js
+│   ├── middleware/
+│   │   └── authMiddleware.js
+|   |   └── errorHandler.js
+│   └── utils/
+│       └── mapAPI.js
+│
+├── frontend/
+│   ├── index.html
+│   ├── login.html
+│   ├── register.html
+│   ├── dashboard_user.html
+│   ├── dashboard_barber.html
+│   ├── dashboard_admin.html
+│   ├── css/
+│   ├── js/
+│   └── media/
+│
+└── package.json
+
+
+Notes and implementation details
+
+Authentication:
+
+JWT based. Tokens are returned at login/registration.
+authMiddleware verifies token and attaches req.user.
+auth accepts role(s) to restrict endpoints.
+
+Password hashing:
+
+Registration routes hash passwords.
+Seed route uses plain-text passwords to keep seed simple. In production, modify seed to hash passwords or use the provided helpers/hashSeedPasswords.js.
+jeftler integration:
+utils/mapAPI.js provides geocodeAddress and getDirections functions using the Google Maps HTTP API.
+
+
+
+COD:
+
+Bookings default to paymentMethod: 'COD' and paymentStatus: 'pending'.
+PaymentStatus can be updated by barber or admin via the booking update endpoints.
+Dummy Data:
+Admin-only /api/admin/seed clears collections and inserts simple dummy users, barbers, and bookings for frontend testing.
+
+Security:
+
+For a production-ready app, add rate-limiting, input validation (e.g., celebrate/Joi), password reset flows, email verification,
+logging retention, and proper seeding with hashed passwords.
+
+
+
+Sure — here’s the backend user flow for each role in short:
+👤 User Flow:
+A user registers or logs in through authRoutes. Once authenticated, they can browse available barbers and create a booking via bookingRoutes.
+ Each booking stores details like barber, service, payment, and location.
+ The user can later view booking status (Pending, Accepted, Completed) and details fetched from the backend.
+💈 Barber Flow:
+A barber logs in via authRoutes and can update their current location (for live tracking) and manage bookings through bookingRoutes.
+ They can change booking status (e.g., Accept, In Progress, Completed) and keep their availability updated.
+🛠️ Admin Flow:
+An admin logs in through adminRoutes and has full control.
+ They can view all users, barbers, and bookings, update booking statuses, manage accounts (approve/reject barbers), and perform analytics or data seeding through seed.js.
+In short:
+User → books service → Barber → updates status/location → Admin → oversees everything and ensures smooth operation.
