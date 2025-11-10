@@ -6,33 +6,52 @@
   <title>Register | TrimTokyo</title>
   <script src="https://cdn.tailwindcss.com"></script>
 </head>
-<body class="min-h-screen flex items-center justify-center bg-gradient-to-br from-blue-900 to-black font-[Montserrat]">
 
-  <div class="bg-white/10 backdrop-blur-md p-10 rounded-2xl shadow-lg w-[90%] max-w-md text-center border border-white/20">
-    <h2 class="text-3xl font-bold text-white mb-8">Register</h2>
+
+<style>
+    body {
+      margin: 0;
+      padding: 0;
+      background: linear-gradient(to bottom, #d7fbe8 0%, #fefefe 50%, #fddde6 100%);
+      background-size: 400% 400%;
+      font-family: 'Roboto Slab', Arial, sans-serif;
+      color: #000000;
+    }
+  </style>
+
+<body class="min-h-screen flex items-center justify-center">
+
+  <div class="bg-white/70 backdrop-blur-xl p-10 rounded-2xl shadow-2xl w-[90%] max-w-md text-center border border-gray-200">
+    <h2 class="text-4xl font-bold text-gray-800 mb-8 tracking-wide">Register</h2>
 
     <form onsubmit="registerUser(event)" class="flex flex-col space-y-6">
-      <input type="text" id="name" placeholder="Full Name" required class="p-3 rounded-lg bg-transparent border border-white/30 text-white placeholder-gray-300 focus:outline-none focus:ring-2 focus:ring-cyan-400">
-      <input type="email" id="email" placeholder="Email" required class="p-3 rounded-lg bg-transparent border border-white/30 text-white placeholder-gray-300 focus:outline-none focus:ring-2 focus:ring-cyan-400">
-      <input type="password" id="password" placeholder="Password" required class="p-3 rounded-lg bg-transparent border border-white/30 text-white placeholder-gray-300 focus:outline-none focus:ring-2 focus:ring-cyan-400">
+      <input type="text" id="name" placeholder="Full Name" required 
+      class="p-3 rounded-lg bg-white border border-gray-300 text-gray-800 placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-cyan-500 focus:border-transparent transition-all">
 
-      <div class="flex justify-center items-center space-x-6 text-white">
-        <label><input type="radio" name="role" value="user" required> User</label>
-        <label><input type="radio" name="role" value="barber"> Barber</label>
-      </div>
+      <input type="email" id="email" placeholder="Email" required 
+       class="p-3 rounded-lg bg-white border border-gray-300 text-gray-800 placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-cyan-500 focus:border-transparent transition-all">
 
-      <button type="submit" class="py-3 rounded-full font-semibold bg-gradient-to-r from-cyan-600 to-blue-500 text-white hover:scale-105 transition-transform">
+      <input type="password" id="password" placeholder="Password" required 
+       class="p-3 rounded-lg bg-white border border-gray-300 text-gray-800 placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-cyan-500 focus:border-transparent transition-all">
+
+      <select id="role" required 
+        class="p-3 rounded-lg bg-white border border-gray-300 text-gray-800 focus:outline-none focus:ring-2 focus:ring-cyan-500 focus:border-transparent transition-all">
+        <option value="" disabled selected>Select Role</option>
+        <option value="user">User</option>
+        <option value="barber">Barber</option>
+      </select>
+
+      <button type="submit" 
+        class="py-3 rounded-full font-semibold bg-gradient-to-r from-cyan-600 to-blue-600 text-white shadow-md hover:shadow-lg hover:scale-[1.03] transition-all duration-200">
         Register
       </button>
     </form>
 
-    <p class="text-gray-300 mt-6">
+    <p class="text-gray-700 mt-6 text-sm">
       Already have an account?
-      <a href="login.html" class="text-cyan-400 hover:underline">Login here</a>
+      <a href="login.html" class="text-cyan-600 font-semibold hover:underline">Login here</a>
     </p>
   </div>
-
   <script src="js/auth.js"></script>
 </body>
 </html>
-

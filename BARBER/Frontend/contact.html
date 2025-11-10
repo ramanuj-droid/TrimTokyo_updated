@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>TrimTokyo | Contact Us</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      background: linear-gradient(to bottom, #d7fbe8 0%, #fefefe 50%, #fddde6 100%);
+      background-size: 400% 400%;
+      font-family: 'Roboto Slab', Arial, sans-serif;
+      color: #000000;
+    }
+
+    /* Header Section */
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background-color: #ffffff;
+      padding: 15px 40px;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+      position: sticky;
+      top: 0;
+      z-index: 10;
+    }
+
+    .location {
+      font-weight: 600;
+      font-size: 1.1em;
+    }
+
+    .search-bar input {
+      padding: 8px 15px;
+      border-radius: 20px;
+      border: 1px solid #ccc;
+      width: 250px;
+      outline: none;
+    }
+
+    .actions {
+      display: flex;
+      align-items: center;
+      gap: 15px;
+    }
+
+    .actions button {
+      padding: 8px 16px;
+      border: none;
+      border-radius: 20px;
+      background-color: #222;
+      color: white;
+      cursor: pointer;
+      font-weight: bold;
+      transition: background-color 0.3s;
+    }
+
+    .actions button:hover {
+      background-color: #444;
+    }
+
+    /* Contact Section */
+    .contact-container {
+      max-width: 1100px;
+      margin: 50px auto;
+      background-color: #ffffffd9;
+      border-radius: 15px;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+      padding: 40px;
+    }
+
+    .contact-container h2 {
+      text-align: center;
+      font-size: 2em;
+      margin-bottom: 30px;
+      color: #000;
+    }
+
+    .contact-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 40px;
+    }
+
+    .contact-info {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+
+    .info-card {
+      display: flex;
+      align-items: center;
+      background-color: #fefefe;
+      border-radius: 12px;
+      padding: 15px;
+      border: 1px solid #ddd;
+      transition: transform 0.3s;
+    }
+
+    .info-card:hover {
+      transform: translateY(-3px);
+    }
+
+    .info-card span {
+      font-size: 1.8em;
+      margin-right: 15px;
+    }
+
+    .info-card div h4 {
+      margin: 0;
+      font-size: 1.1em;
+    }
+
+    .info-card div p {
+      margin: 2px 0 0 0;
+      color: #555;
+      font-size: 0.95em;
+    }
+
+    /* Contact Form */
+    form {
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+    }
+
+    input, textarea {
+      padding: 12px;
+      border-radius: 10px;
+      border: 1px solid #ccc;
+      outline: none;
+      font-size: 1em;
+      font-family: 'Roboto Slab', Arial, sans-serif;
+      transition: border-color 0.3s;
+    }
+
+    input:focus, textarea:focus {
+      border-color: #000;
+    }
+
+    textarea {
+      resize: none;
+      height: 120px;
+    }
+
+    .submit-btn {
+      background-color: #000;
+      color: white;
+      border: none;
+      padding: 12px 20px;
+      border-radius: 25px;
+      cursor: pointer;
+      font-weight: bold;
+      transition: background-color 0.3s, transform 0.3s;
+    }
+
+    .submit-btn:hover {
+      background-color: #333;
+      transform: scale(1.05);
+    }
+
+    /* Map Section */
+    .map {
+      margin: 50px auto;
+      max-width: 1100px;
+      border-radius: 15px;
+      overflow: hidden;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    iframe {
+      width: 100%;
+      height: 350px;
+      border: none;
+    }
+
+    /* Footer */
+    footer {
+      text-align: center;
+      padding: 10px;
+      background-color: #28a99e;
+      font-size: 0.9em;
+    }
+
+    @media (max-width: 768px) {
+      .contact-grid {
+        grid-template-columns: 1fr;
+      }
+      header {
+        flex-direction: column;
+        gap: 10px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- 1️⃣ Header -->
+  <header>
+    <div class="location">📍 Location: Mumbai, India</div>
+    <div class="search-bar">
+      <input type="text" placeholder="Search for barbers or services..." />
+    </div>
+    <div class="actions">
+      <button>Sign In</button>
+      <button>🛒 Cart</button>
+    </div>
+  </header>
+
+  <!-- 2️⃣ Contact Section -->
+  <section class="contact-container">
+    <h2>Contact Us</h2>
+    <div class="contact-grid">
+      <div class="contact-info">
+        <div class="info-card">
+          <span>📍</span>
+          <div>
+            <h4>Our Office</h4>
+            <p>123 Trim Street, Mumbai, India</p>
+          </div>
+        </div>
+        <div class="info-card">
+          <span>📞</span>
+          <div>
+            <h4>Phone</h4>
+            <p>+91 98765 43210</p>
+          </div>
+        </div>
+        <div class="info-card">
+          <span>✉️</span>
+          <div>
+            <h4>Email</h4>
+            <p>support@trimtokyo.com</p>
+          </div>
+        </div>
+        <div class="info-card">
+          <span>⏰</span>
+          <div>
+            <h4>Working Hours</h4>
+            <p>Mon - Sat: 9 AM - 9 PM</p>
+          </div>
+        </div>
+      </div>
+
+      <form>
+        <input type="text" placeholder="Your Name" required />
+        <input type="email" placeholder="Your Email" required />
+        <input type="text" placeholder="Subject" />
+        <textarea placeholder="Your Message" required></textarea>
+        <button type="submit" class="submit-btn">Send Message</button>
+      </form>
+    </div>
+  </section>
+
+  <!-- 3️⃣ Map Section -->
+  <section class="map">
+    <iframe
+      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3770.7103946079177!2d72.87765527518714!3d19.075983982113785!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be7ce4a0aa9403f%3A0xa86f4d229acfa75c!2sMumbai%2C%20Maharashtra!5e0!3m2!1sen!2sin!4v1698590240071!5m2!1sen!2sin"
+      allowfullscreen=""
+      loading="lazy">
+    </iframe>
+  </section>
+
+  <!-- 4️⃣ Footer -->
+  <footer>
+    © Copyright TrimTokyo
+  </footer>
+</body>
+</html>

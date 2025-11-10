@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>TrimTokyo | Book Your Barber</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      background: linear-gradient(to bottom, #d7fbe8 0%, #fefefe 50%, #fddde6 100%);
+      background-size: 400% 400%;
+      font-family: 'Roboto Slab', Arial, sans-serif;
+      color: #000000;
+    }
+
+    
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background-color: #ffffff;
+      padding: 15px 40px;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+      position: sticky;
+      top: 0;
+      z-index: 10;
+    }
+
+    .location {
+      font-weight: 600;
+      font-size: 1.1em;
+    }
+
+    .search-bar input {
+      padding: 8px 15px;
+      border-radius: 20px;
+      border: 1px solid #ccc;
+      width: 250px;
+      outline: none;
+    }
+
+    .actions {
+      display: flex;
+      align-items: center;
+      gap: 15px;
+    }
+
+    .actions button {
+      padding: 8px 16px;
+      border: none;
+      border-radius: 20px;
+      background-color: #222;
+      color: white;
+      cursor: pointer;
+      font-weight: bold;
+      transition: background-color 0.3s;
+    }
+
+    .actions button:hover {
+      background-color: #444;
+    }
+
+    
+    .genres {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 15px;
+      padding: 25px 0;
+      background-color: #f9f9f9;
+    }
+
+    .genre {
+      background-color: #fff;
+      padding: 10px 20px;
+      border-radius: 20px;
+      border: 1px solid #ccc;
+      font-weight: 500;
+      cursor: pointer;
+      transition: all 0.3s;
+    }
+
+    .genre:hover {
+      background-color: #000;
+      color: #fff;
+      transform: scale(1.05);
+    }
+
+    
+    .card-section {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 25px;
+      padding: 40px;
+    }
+
+    .card {
+      background-color: white;
+      border-radius: 15px;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+      overflow: hidden;
+      text-align: center;
+      transition: transform 0.3s;
+    }
+
+    .card:hover {
+      transform: translateY(-5px);
+    }
+
+    .card img {
+      width: 100%;
+      height: 180px;
+      object-fit: cover;
+    }
+
+    .card-content {
+      padding: 15px;
+    }
+
+    .card-content h3 {
+      margin: 8px 0;
+      font-size: 1.2em;
+    }
+
+    .card-content p {
+      font-size: 0.9em;
+      color: #555;
+      margin-bottom: 10px;
+    }
+
+    .book-btn {
+      background-color: #000;
+      color: white;
+      border: none;
+      padding: 8px 14px;
+      border-radius: 20px;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
+
+    .book-btn:hover {
+      background-color: #333;
+    }
+
+    /* Footer */
+    footer {
+      text-align: center;
+      padding: 10px;
+      background-color: #28a99e;
+      font-size: 0.9em;
+    }
+
+    @media (max-width: 992px) {
+      .card-section {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    @media (max-width: 600px) {
+      .card-section {
+        grid-template-columns: 1fr;
+      }
+      header {
+        flex-direction: column;
+        gap: 10px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- 1️⃣ Header Section -->
+  <header>
+    <div class="location">📍 Location: Mumbai, India</div>
+    <div class="search-bar">
+      <input type="text" placeholder="Search for barbers or services..." />
+    </div>
+    <div class="actions">
+      <button onclick="window.location.href='home.html'">Homepage</button>
+      <button onclick="window.location.href='login.html'">Sign In</button>
+      <button onclick="window.location.href='dashboard_user.html'">🛒 Cart</button>
+    </div>
+  </header>
+
+  <section class="genres">
+    <div class="genre">Haircut</div>
+    <div class="genre">Beard Trim</div>
+    <div class="genre">Facial</div>
+    <div class="genre">Massage</div>
+    <div class="genre">Hair Coloring</div>
+    <div class="genre">Spa</div>
+  </section>
+
+  
+  <section class="card-section">
+    <!-- 12 Barber Cards with reliable picsum.photos image links -->
+    <div class="card">
+      <img src="https://picsum.photos/seed/barber1/600/400" alt="Barber Shop 1" />
+      <div class="card-content">
+        <h3>Classic Cut Studio</h3>
+        <p>Top-rated stylists for men and women.</p>
+        <button class="book-btn">Book Now</button>
+      </div>
+    </div>
+
+    <div class="card">
+      <img src="https://picsum.photos/seed/barber2/600/400" alt="Barber Shop 2" />
+      <div class="card-content">
+        <h3>Urban Edge Salon</h3>
+        <p>Trendy haircuts and premium beard styling.</p>
+        <button class="book-btn">Book Now</button>
+      </div>
+    </div>
+
+    <div class="card">
+      <img src="https://picsum.photos/seed/barber3/600/400" alt="Barber Shop 3" />
+      <div class="card-content">
+        <h3>Royal Blades</h3>
+        <p>Luxury grooming experience for modern men.</p>
+        <button class="book-btn">Book Now</button>
+      </div>
+    </div>
+
+    <div class="card">
+      <img src="https://picsum.photos/seed/barber4/600/400" alt="Barber Shop 4" />
+      <div class="card-content">
+        <h3>The Trim House</h3>
+        <p>Affordable and stylish trims for everyone.</p>
+        <button class="book-btn">Book Now</button>
+      </div>
+    </div>
+
+    <div class="card">
+      <img src="https://picsum.photos/seed/barber5/600/400" alt="Barber Shop 5" />
+      <div class="card-content">
+        <h3>Sharp Look Barbers</h3>
+        <p>Precision and professionalism in every cut.</p>
+        <button class="book-btn">Book Now</button>
+      </div>
+    </div>
+
+    <div class="card">
+      <img src="https://picsum.photos/seed/barber6/600/400" alt="Barber Shop 6" />
+      <div class="card-content">
+        <h3>Glow & Flow Spa</h3>
+        <p>Relaxation, rejuvenation, and radiance.</p>
+        <button class="book-btn">Book Now</button>
+      </div>
+    </div>
+
+    <div class="card">
+      <img src="https://picsum.photos/seed/barber7/600/400" alt="Barber Shop 7" />
+      <div class="card-content">
+        <h3>Modern Styles Hub</h3>
+        <p>Fresh and modern hairstyles by experts.</p>
+        <button class="book-btn">Book Now</button>
+      </div>
+    </div>
+
+    <div class="card">
+      <img src="https://picsum.photos/seed/barber8/600/400" alt="Barber Shop 8" />
+      <div class="card-content">
+        <h3>Cut & Craft Lounge</h3>
+        <p>Personalized grooming for every style.</p>
+        <button class="book-btn">Book Now</button>
+      </div>
+    </div>
+
+    <div class="card">
+      <img src="https://picsum.photos/seed/barber9/600/400" alt="Barber Shop 9" />
+      <div class="card-content">
+        <h3>Beard Bros Studio</h3>
+        <p>Experts in beard shaping and maintenance.</p>
+        <button class="book-btn">Book Now</button>
+      </div>
+    </div>
+
+    <div class="card">
+      <img src="https://picsum.photos/seed/barber10/600/400" alt="Barber Shop 10" />
+      <div class="card-content">
+        <h3>Elite Trim Zone</h3>
+        <p>Where precision meets passion.</p>
+        <button class="book-btn">Book Now</button>
+      </div>
+    </div>
+
+    <div class="card">
+      <img src="https://picsum.photos/seed/barber11/600/400" alt="Barber Shop 11" />
+      <div class="card-content">
+        <h3>Gentlemen’s Den</h3>
+        <p>Classic grooming for the modern gentleman.</p>
+        <button class="book-btn">Book Now</button>
+      </div>
+    </div>
+
+    <div class="card">
+      <img src="https://picsum.photos/seed/barber12/600/400" alt="Barber Shop 12" />
+      <div class="card-content">
+        <h3>Salon Aura</h3>
+        <p>Glow up your look with expert stylists.</p>
+        <button class="book-btn">Book Now</button>
+      </div>
+    </div>
+  </section>
+
+<footer>
+   
+  © Copyright TrimTokyo
+</footer>
+
+</body>
+</html>
